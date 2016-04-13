@@ -86,7 +86,7 @@ func (proc *FabnetProcessor) dumpPassiveView() rpc.Params {
 	return ret
 }
 
-func (proc *FabnetProcessor) Bootstrap() error {
+func (proc *FabnetProcessor) Start() error {
 	var err error
 	data := rpc.NewParams()
 	data["id"] = proc.config.Name

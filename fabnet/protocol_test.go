@@ -133,12 +133,6 @@ func newNode(id string, port string, bootstrap_port string) *rpc.Node {
 		panic("Cant create Node")
 	}
 	go node.Run()
-	if bootstrap_port != "" {
-		err = proc.Bootstrap()
-		if err != nil {
-			panic("No bootstrap")
-		}
-	}
 	return node
 }
 

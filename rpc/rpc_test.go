@@ -9,6 +9,10 @@ import (
 type HelloOpProcessor struct {
 }
 
+func (h *HelloOpProcessor) Start() error {
+	return nil
+}
+
 func (h *HelloOpProcessor) ProcessRequest(req *Packet) Params {
 	d := NewParams()
 	d["msg"] = "hello, " + req.Data["test"]

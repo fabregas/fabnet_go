@@ -5,6 +5,7 @@ import (
 )
 
 type ApiProcessor interface {
+	Start() (err error)
 	ProcessRequest(req *Packet) (resp Params)
 }
 
@@ -38,6 +39,10 @@ func NewNode(name, addr string, processor ApiProcessor) (*Node, error) {
 }
 
 func (node *Node) Run() (err error) {
+	err = node.Processor.Start()
+	if err != nil {
+		return err
+	}
 	for {
 		conn, err := node.listener.AcceptTCP()
 		if err != nil {
@@ -48,7 +53,7 @@ func (node *Node) Run() (err error) {
 		go node.handleConnection(conn)
 	}
 	node.finished <- true
-	return
+	return err
 }
 
 func (node *Node) Close() error {
