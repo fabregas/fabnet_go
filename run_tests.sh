@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dirs=(./core/* ./fabnet)
+dirs=(./rpc ./fabnet ./logger)
 echo "mode: set" > coverage.out
 for Dir in ${dirs[*]};
 do

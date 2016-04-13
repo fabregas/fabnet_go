@@ -1,8 +1,8 @@
 package fabnet
 
 import (
-	"../core/rpc"
 	"fmt"
+	"github.com/fabregas/fabnet_go/rpc"
 	"testing"
 	"time"
 )

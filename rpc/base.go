@@ -6,7 +6,7 @@ import (
 	"errors"
 	"fmt"
 
-	"../logger"
+	"github.com/fabregas/fabnet_go/logger"
 )
 
 const (

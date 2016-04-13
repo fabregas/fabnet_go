@@ -1,10 +1,10 @@
 package fabnet
 
 import (
-	"../core/logger"
-	"../core/rpc"
 	"errors"
 	"fmt"
+	"github.com/fabregas/fabnet_go/logger"
+	"github.com/fabregas/fabnet_go/rpc"
 	"strconv"
 	"sync"
 )
